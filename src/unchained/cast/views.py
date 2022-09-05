@@ -1,12 +1,25 @@
 from ctypes import cast
 from urllib import request
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .form import RawProductionForm, CastForm
 from .models import Cast
 
 # Create your views here.
+
+
+#update
+def cast_update_view(request, id=id):
+    obj = get_object_or_404(Cast, id=id)
+    form = CastForm(request.POST or None, request.FILES or None,  instance=obj)
+    if form.is_valid():
+        form.save()
+        return redirect('../')
+    context = {
+        'form': form
+    }
+    return render(request, "cast/cast_new_form.html", context)
 
 #form to add cast
 def cast_add_view(request):

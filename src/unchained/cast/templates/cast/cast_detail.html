@@ -5,6 +5,11 @@
     <tbody>
       <tr>
         <td><h2>{{object.played_by}}</h2></td>
+        <td>
+          <form action="edit/">
+            <button type="submit" class="btn btn-light">Edit</button>
+          </form>
+        </td>
       </tr>
       <tr>
         <td><h3>{{object.character_name}}</h3></td>
@@ -12,7 +17,7 @@
       <tr>
         <td> <p><b>Description: </b> {{object.description}}</p></td>
         <td>{% if object.image %}
-          <img src="{{object.image.url}}" alt="No Images!" width="400">
+          <img src="{{object.image.url}}" alt="No Images!"  width="400">
             
           {% endif %}</td>
       </tr>

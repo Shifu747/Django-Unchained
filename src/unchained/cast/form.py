@@ -7,16 +7,10 @@ from .models import Cast
 class CastForm(forms.ModelForm):
     class Meta:
         model = Cast
-        fields = [
-            'character_name',
-            'played_by',
-            'description',
-            'popular_film',
-            'image'
+        fields = '__all__'
             
-            ]
 class RawProductionForm(forms.Form):
-    character_name      = forms.CharField()
+    character_name      = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "character name"}))
     played_by           = forms.CharField()
     description         = forms.CharField(widget=forms.Textarea)
     popular_film        = forms.CharField()

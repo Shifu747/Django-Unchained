@@ -18,9 +18,10 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from pages.views import home_view
-from cast.views import cast_add_view, cast_list_view, cast_detail_view
+from cast.views import cast_add_view, cast_list_view, cast_detail_view, cast_update_view
 
 urlpatterns = [
+    path('cast/<int:id>/edit/', cast_update_view, name='cast-update'),
     path('cast/<int:id>/', cast_detail_view, name='cast_detail'),
     path('cast/', cast_list_view, name= 'cast_list'),
     path('cast/create/', cast_add_view, name='new_cast'),
