@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 style="text-align: center;">The Cast list of Django Unchained:</h2>
+    {% for instance in object_list %}
+    <table class="table table-borderless">
+        <tbody>
+            <tr>
+                <td>
+                    <p style="text-align: center;"><b><a href="{{instance.get_absolute_url}}">{{instance.played_by}}</a></b></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        
+    {% endfor %}
+{% endblock content %}
