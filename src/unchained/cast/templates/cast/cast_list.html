@@ -7,7 +7,9 @@
         <tbody>
             <tr>
                 <td>
-                    <p style="text-align: center;"><b><a href="{{instance.get_absolute_url}}">{{instance.played_by}}</a></b></p>
+                    <form action="{{instance.get_absolute_url}}" style="margin: auto; width: 220px;">
+                        <button type="submit" class="btn btn-light"><img src="{{instance.image.url}}" alt="" width="100"><br>{{instance.played_by}}</button>
+                      </form>
                 </td>
             </tr>
         </tbody>
